@@ -1,0 +1,118 @@
+.dp-save-button {
+  height: 44px;
+  width: 40%;
+  border-radius: 24.5px;
+  background: linear-gradient(315.16deg, #7873f5 0%, #ec77ab 100%);
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: auto;
+  /* margin-top: 20%; */
+  margin-bottom: 20%;
+  margin-left: 30%;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 500;
+  line-height: 44px;
+  outline: none;
+}
+.toast-container {
+  z-index: 1000;
+  margin-top: 100;
+}
+.dp-timezone-picker {
+  width: 100%;
+}
+.timezone-picker-textfield input {
+  height: 44px;
+  width: 80%;
+  border: 1px solid #d2d7ef;
+  border-radius: 24.5px !important;
+  padding-left: 15px;
+  font-size: 16px;
+  color: #ebedf8;
+  font-weight: 500;
+}
+.timezone-picker-textfield input {
+  height: 44px;
+  width: 100%;
+  padding-left: 15px;
+  /* margin-left: 32px; */
+  /* margin-right: 32px; */
+  /* border: 1px solid #d2d7ef;  */
+  border-radius: 24.5px;
+}
+.dp-settings-container {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ebedf8;
+  background-color: #fafbfd;
+}
+.settings-info-cont {
+  width: 40%;
+  height: 80%;
+  padding-top: 20px;
+  /* padding: 5%; */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  border: 1px solid #ebedf8;
+}
+.dp-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 32px;
+  font-size: 18px;
+  color: #909ba6;
+  font-weight: 500;
+}
+.dp-input {
+  padding-left: 15px;
+  font-size: 16px;
+  color: #2d2d2d;
+  font-weight: 500;
+  height: 44px;
+  width: 80%;
+  margin-bottom: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+  border: 1px solid #d2d7ef;
+  border-radius: 24.5px;
+  outline: none;
+}
+
+.dp-left {
+  padding-left: 0px;
+}
+.settinfs-form-div {
+  /* align-self: center;
+ align-items: center;
+ text-align: center; */
+}
+.form-settings {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dp-timezone-picker ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #444;
+  opacity: 1; /* Firefox */
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ddd;
+  opacity: 1; /* Firefox */
+}
+.Settings-page-head {
+  color: #a5b0b7;
+  font-weight: 400;
+  padding: 20px 20px;
+}
+
+.field-error {
+  color: red;
+  margin-left: 30%;
+  font-size: 16px;
+}

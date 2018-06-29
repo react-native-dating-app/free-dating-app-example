@@ -1,0 +1,25 @@
+type SignupUserPayload {
+  id: ID!
+  token: String!
+}
+
+extend type Mutation {
+  signupUser(
+    email: String!, 
+    password: String!,
+    name: String!
+    firstName: String!
+    lastName: String!
+    averageAge: Float
+    profileUrl: String
+    profilePicture: String
+    coverPicture: String
+    gender: String!
+    deviceId: String!
+    devicePlatform: String!
+    latitude: Float!
+    longitude: Float!
+    oneSignalPlayerId: String
+    role: String
+  ): SignupUserPayload
+}

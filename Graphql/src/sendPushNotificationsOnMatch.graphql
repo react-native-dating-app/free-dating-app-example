@@ -1,0 +1,25 @@
+subscription {
+  Vote(filter: {
+    mutation_in: [CREATED]
+  }) {
+    updatedFields
+    node {
+      id
+      isLiked
+      target {
+        id
+        targets {
+          target {
+            id
+          }
+          isLiked
+        }
+        notifyMatches
+        oneSignalPlayerId
+      }
+      user {
+          id
+        }
+    }
+  }
+}

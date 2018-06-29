@@ -1,0 +1,10 @@
+type DeleteMatchResponse {
+  ids:[ID!]!,
+}
+
+extend type Mutation {
+  deleteMatch(
+    userId: ID!,
+    targetId: ID!
+   ): DeleteMatchResponse
+}

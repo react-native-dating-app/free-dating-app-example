@@ -1,0 +1,8 @@
+type CountPayload {
+  count: Int
+  error: Boolean
+}
+
+extend type Query {
+  matchCount: CountPayload
+}

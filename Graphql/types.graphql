@@ -1,0 +1,115 @@
+type File @model {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime!
+  url: String!
+  user: User @relation(name: "UserPictures")
+}
+
+type Interest @model {
+  name: String! @isUnique
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+  user: User @relation(name: "UserInterests")
+  suggestToUsers: Boolean! @defaultValue(value: false)
+}
+
+type User @model {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+  interests: [Interest!]! @relation(name: "UserInterests")
+  active: Boolean @defaultValue(value: true)
+  deleted: Boolean @defaultValue(value: false)
+  name: String!
+  gender: Gender!
+  showMeMale: Boolean! @defaultValue(value: true)
+  showMeFemale: Boolean! @defaultValue(value: true)
+  age: DateTime
+  averageAge: Float @defaultValue(value: 21.0)
+  firstName: String!
+  lastName: String!
+  phoneNo: String
+  profileUrl: String
+  jobTitle: String
+  description: String
+  worksAt: String
+  instagram: Boolean @defaultValue(value: false) @migrationValue(value: false)
+  spotify: Boolean
+  discoverablity: Boolean! @defaultValue(value: true)
+  searchDistance: Float! @defaultValue(value: 100.0)
+  ageRange: [Int!] @defaultValue(value: "[18,100]")
+  distanceUnit: DistanceUnit! @defaultValue(value: Km)
+  notifyMatches: Boolean! @defaultValue(value: true)
+  notifyMessages: Boolean! @defaultValue(value: true)
+  coverPicture: String
+  deviceId: String!
+  devicePlatform: Platform!
+  role: Role @defaultValue(value: User)
+  profilePicture: String
+  targets: [Vote!]! @relation(name: "Target")
+  targetedBy: [Vote!]! @relation(name: "TargetedBy")
+  sentMessages: [Message!]! @relation(name: "Sent")
+  receivedMessages: [Message!]! @relation(name: "Received")
+  longitude: Float!
+  latitude: Float!
+  email: String
+  password: String!
+  oneSignalPlayerId: String
+  pictures: [File!]! @relation(name: "UserPictures")
+  instaPictures: [String!]
+  instaUserName: String @defaultValue(value: "")
+  picturePreferences: [String!]
+}
+
+type Vote @model {
+  user: User! @relation(name: "Target")
+  target: User! @relation(name: "TargetedBy")
+  id: ID! @isUnique
+  isLiked: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Message @model {
+  id: ID! @isUnique
+  text: String!
+  sender: User! @relation(name: "Sent")
+  receiver: User! @relation(name: "Received")
+  createdAt: DateTime!
+}
+
+type Setting @model {
+  googlePlayStoreLink: String
+  id: ID! @isUnique
+  iosAppStoreLink: String
+  timezone: String
+}
+
+enum DistanceUnit {
+  Km
+  Mile
+}
+
+enum Gender {
+  Male
+  Female
+  Others
+}
+
+enum Platform {
+  Ios
+  Android
+}
+
+enum Role {
+  User
+  Admin
+}
+
+

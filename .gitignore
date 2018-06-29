@@ -1,0 +1,8 @@
+node_modules
+Graphql/node_modules/
+MobileApp/node_modules/
+WebDashboard/node_modules/
+WebDashboard/node_modules/
+WebDashboard/react/node_modules/
+WebDashboard/react/build/
+

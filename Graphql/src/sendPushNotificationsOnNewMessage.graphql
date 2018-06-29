@@ -1,0 +1,21 @@
+subscription {
+  Message(filter: {
+    mutation_in: [CREATED, UPDATED, DELETED]
+  }) {
+    updatedFields
+    node {
+      id
+      text
+      sender {
+        name
+        id
+        averageAge
+      }
+      receiver {
+        oneSignalPlayerId
+        notifyMessages
+        id
+      }
+    }
+  }
+}

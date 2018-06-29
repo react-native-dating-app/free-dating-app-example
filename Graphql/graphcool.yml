@@ -1,0 +1,156 @@
+types: ./types.graphql
+functions:
+
+# added by email-password template: (please uncomment)
+  signup:
+    type: resolver
+    schema: src/email-password/signup.graphql
+    handler:
+      code: src/email-password/signup.ts
+
+  authenticate:
+    type: resolver
+    schema: src/email-password/authenticate.graphql
+    handler:
+      code: src/email-password/authenticate.ts
+
+  loggedInUser:
+    type: resolver
+    schema: src/email-password/loggedInUser.graphql
+    handler:
+      code: src/email-password/loggedInUser.ts
+
+  deleteMatch:
+    handler:
+      code: 
+        src: ./src/deleteMatch.js
+    type: resolver
+    schema: src/deleteMatch.graphql
+
+  GetAllUsers:
+    handler:
+      code:
+        src: ./src/GetAllUsers.js
+    type: resolver
+    schema: ./src/GetAllUsers.graphql
+  matchCount:
+    handler:
+      code:
+        src: ./src/matchCount.js
+    type: resolver
+    schema: ./src/matchCount.graphql
+  sendPushNotificationsOnMatch:
+    handler:
+      code:
+        src: ./src/sendPushNotificationsOnMatch.js
+        environment:
+          ONE_SIGNAL_URL: https://onesignal.com/api/v1/notifications
+          ONE_SIGNAL_API_KEY: YOUR_ONE_SIGNAL_API_KEY
+          ONE_SIGNAL_APP_ID: YOUR_ONE_SIGNAL_API_ID
+    type: subscription
+    query: ./src/sendPushNotificationsOnMatch.graphql
+  sendPushNotificationsOnNewMessage:
+    handler:
+      code:
+        src: ./src/sendPushNotificationsOnNewMessage.js
+        environment:
+          ONE_SIGNAL_URL: https://onesignal.com/api/v1/notifications
+          ONE_SIGNAL_API_KEY: YOUR_ONE_SIGNAL_API_KEY
+          ONE_SIGNAL_APP_ID: YOUR_ONE_SIGNAL_API_ID
+    type: subscription
+    query: ./src/sendPushNotificationsOnNewMessage.graphql
+permissions:
+- operation: File.read
+- operation: File.create
+- operation: File.update
+- operation: File.delete
+- operation: Interest.read
+- operation: Interest.create
+- operation: Interest.update
+- operation: Interest.delete
+- operation: Message.read
+  fields:
+  - text
+  - createdAt
+  - id
+  - sender
+  - receiver
+- operation: Message.create
+- operation: Message.update
+- operation: Message.delete
+- operation: Setting.read
+- operation: Setting.create
+- operation: Setting.update
+- operation: Setting.delete
+- operation: User.read
+  authenticated: true
+  fields:
+  - gender
+  - age
+  - averageAge
+  - firstName
+  - lastName
+  - phoneNo
+  - profileUrl
+  - instagram
+  - spotify
+  - discoverablity
+  - searchDistance
+  - distanceUnit
+  - notifyMatches
+  - notifyMessages
+  - coverPicture
+  - deviceId
+  - devicePlatform
+  - role
+  - profilePicture
+  - longitude
+  - latitude
+  - targets
+  - sentMessages
+  - receivedMessages
+  - targetedBy
+  - email
+  - password
+  - name
+  - active
+  - deleted
+  - oneSignalPlayerId
+  - showMeMale
+  - ageRange
+  - showMeFemale
+  - jobTitle
+  - worksAt
+  - description
+  - instaUserName
+  - instaPictures
+  - picturePreferences
+- operation: User.create
+- operation: User.update
+  authenticated: true
+- operation: User.delete
+  authenticated: true
+- operation: User.read
+  fields:
+  - id
+  - name
+  - longitude
+  - latitude
+  - profilePicture
+- operation: Vote.read
+  authenticated: true
+- operation: Vote.create
+  authenticated: true
+- operation: Vote.update
+  authenticated: true
+  fields: []
+- operation: Vote.delete
+  authenticated: true
+- operation: Received.*
+- operation: Sent.*
+- operation: TargetedBy.*
+- operation: Target.*
+- operation: UserInterests.*
+- operation: UserPictures.* 
+  rootTokens:
+  - seed-script

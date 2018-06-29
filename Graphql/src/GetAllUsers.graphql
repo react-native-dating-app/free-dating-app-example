@@ -1,0 +1,17 @@
+type ResponsePayload {
+  success:Boolean,
+  errors: Json,
+  allUsers: Json,
+}
+
+extend type Query {
+  getAllUsers(
+    userId: ID!,
+    showMe: String,
+    minAge: Float,
+    maxAge: Float,
+    latitude: Float!,
+    longitude: Float!,
+    distance: Float!,
+    count: Int!): ResponsePayload
+}

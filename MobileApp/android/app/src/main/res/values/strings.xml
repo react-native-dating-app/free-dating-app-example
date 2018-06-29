@@ -1,0 +1,5 @@
+<resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">isPqmen2Q6045EHRYmCv6wK5Il-eBkO7R70Yf</string>
+    <string name="app_name">DatingApp</string>
+    <string name="facebook_app_id">YOUR_APP_ID</string>
+</resources>

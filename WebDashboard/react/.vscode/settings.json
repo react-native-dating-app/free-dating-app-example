@@ -1,0 +1,9 @@
+{
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "prettier.bracketSpacing": true,
+    "java.configuration.updateBuildConfiguration": "disabled"
+}
